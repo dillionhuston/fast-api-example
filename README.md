@@ -1,5 +1,9 @@
 # FastAPI Example
 
+[![Checked with mypy](https://www.mypy-lang.org/static/mypy_badge.svg)](https://mypy-lang.org/)
+[![Linting: Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+[![Security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
+
 ## Overview
 
 This repo contains a simple FastAPI example along with standard Poetry setup, as well as Mypy static type checking, code formatting and linting with ruff
