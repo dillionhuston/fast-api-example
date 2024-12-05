@@ -35,8 +35,8 @@ To run the project's default code quality checks, make sure to install the confi
 any commit to the repo will trigger the hooks:
 
 ```bash
-pre-commit install
-pre-commit run --all-files
+poetry run pre-commit install
+poetry run pre-commit run --all-files
 
 Mypy static type checking................................................Passed
 Ruff code linting........................................................Passed
