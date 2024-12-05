@@ -69,3 +69,6 @@ Finally, invoke the API startup script (see `tool.poetry.scripts` in `pyproject.
 ```bash
 api-start
 ```
+
+For details on more advanced aspects of deployment (e.g., HTTPS) and alternate deployment
+approaches, see the [FastAPI deployment docs](https://fastapi.tiangolo.com/deployment/).
