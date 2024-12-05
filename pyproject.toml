@@ -20,7 +20,7 @@ python_version = "3.11"
 disallow_untyped_defs = true
 
 [tool.bandit.assert_used]
-skips = ["*/test_*.py", "*/*_test.py"]
+skips = ["*/test_*.py", "*/*_test.py"]  # Stops asserts in tests being flagged.
 
 [build-system]
 requires = ["poetry-core>=1.5.0"]

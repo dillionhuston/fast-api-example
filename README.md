@@ -8,7 +8,8 @@
 
 This repo contains a simple [FastAPI](https://fastapi.tiangolo.com) example along with standard Poetry setup, as well as [Mypy](https://github.com/python/mypy) static type checking,
 code formatting and linting with [Ruff](https://github.com/astral-sh/ruff) and security linting with [Bandit](https://github.com/PyCQA/bandit). All
-code quality checks are facilitated using [pre-commit](https://github.com/pre-commit/pre-commit) hooks.
+code quality checks are facilitated using [pre-commit](https://github.com/pre-commit/pre-commit) hooks. For SSL-related issues on Kainos machines in relation to package installation
+via Poetry, see the [SharePoint guide](https://kainossoftwareltd.sharepoint.com/sites/InformationSecurity/SitePages/Corporate-Certification-Dev-Tool-Setup.aspx#python%2C-pyenv-poetry).
 
 ## Running the API
 
