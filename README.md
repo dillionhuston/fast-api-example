@@ -6,7 +6,7 @@
 
 ## Overview
 
-This repo contains a simple FastAPI example along with standard Poetry setup, as well as [Mypy](https://github.com/python/mypy) static type checking,
+This repo contains a simple [FastAPI](https://fastapi.tiangolo.com) example along with standard Poetry setup, as well as [Mypy](https://github.com/python/mypy) static type checking,
 code formatting and linting with [Ruff](https://github.com/astral-sh/ruff) and security linting with [Bandit](https://github.com/PyCQA/bandit). All
 code quality checks are facilitated using [pre-commit](https://github.com/pre-commit/pre-commit) hooks.
 
