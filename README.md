@@ -18,31 +18,26 @@ Once the API is running, make a request:
 
 ```bash
 $ curl http://127.0.0.1:8000
-
-# Outputs:
-# {"Hello":"World"}
+{"Hello":"World"}
 
 $ curl http://127.0.0.1:8000/items/1234?query=somequery
-
-# Outputs
-# {"item_id":1234,"query":"somequery"}
+{"item_id":1234,"query":"somequery"}
 ```
 
 ## Running Code Quality Checks
 
-To run the project's default code quality checks, ensure you have [Task](https://taskfile.dev) installed, the from the terminal:
+To run the project's default code quality checks, make sure to install the configured pre-commit hooks, then run them.
+After this, any commit to the repo will trigger the pre-commit hooks (if needed, this can be pypasses by adding the
+`--no-verify` flag to the commit, but avoid this wherever possible).
 
 ```bash
-$ task code-quality-checks
+$ pre-commit install
+$ pre-commit run --all-files
 
-# Outputs:
-# [task] Running mypy static type checking
-# Success: no issues found in 2 source files
-# [task] Running ruff code formatting
-# 2 files already formatted
-# [task] Running ruff code linting
-# All checks passed!
-# [task] Running bandit security linting
+Mypy static type checking................................................Passed
+Ruff code linting........................................................Passed
+Ruff code formatting.....................................................Passed
+Bandit security linting..................................................Passed
 ```
 
 ## Build a Deployable Artifact
