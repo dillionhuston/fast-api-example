@@ -11,7 +11,7 @@ To run the project, ensure you have [Poetry](https://python-poetry.org) installe
 
 ```bash
 poetry install
-poetry run fastapi dev src/app.main.py
+poetry run fastapi dev src/fast_api_example/main.py
 ```
 
 Once the API is running, make a request:
