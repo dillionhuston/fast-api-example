@@ -68,15 +68,27 @@ tests/unit/test_app.py ..                                                       
 
 ## Build a Deployable Artifact
 
-To build the API into a Python wheel which can deployed to a server/cloud hosting envrinment, from the terminal simply run:
+### Docker Container
+
+[TODO]
+
+### Python Wheel or Package
+
+To build the API into a Python wheel which can be pushed to a package repository or deployed directly to a server, from the terminal simply run:
 
 ```bash
 poetry build
 ```
 
-This will create a `dist` folder in the root containing a `.whl` file, and a `.tar.gz` file. These files can either be deployed directly to a remote environment or published to package repository using the `poetry publish` command (though ideally the app would be containerised and deployed in this manner).
+This will create a `dist` folder in the root containing a `.whl` file, and a `.tar.gz` file. These files can either be deployed directly to a remote environment or published to package repository using the `poetry publish` command.
 
-## Run the API on a Server
+## Run the API
+
+### Docker Container
+
+[TODO]
+
+### Python Wheel or Package
 
 Assuming the package has either been deployed to the server or pushed to a package respository, and that an appropriate Python version is installed, create a virtual environment and install the wheel/package:
 
