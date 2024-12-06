@@ -47,6 +47,25 @@ Bandit security linting..................................................Passed
 
 If needed, hooks can be pypasses by adding the `--no-verify` flag to the commit, but avoid this wherever possible.
 
+## Running Tests
+
+The project has some simple unit tests defined in `tests/unit` which can be invoked via `pytest`:
+
+```bash
+poetry run pytest tests/unit
+
+========================================== test session starts ==========================================
+platform darwin -- Python 3.11.0, pytest-8.3.4, pluggy-1.5.0
+rootdir: /Users/jamie/Documents/repos/internal/fast-api-example
+configfile: pyproject.toml
+plugins: anyio-4.7.0
+collected 2 items                                                                                                                                                                                                                                                                                               
+
+tests/unit/test_app.py ..                                                                                                                                                                                                                                                                                 [100%]
+
+========================================== 2 passed in 2.43s ==========================================
+```
+
 ## Build a Deployable Artifact
 
 To build the API into a Python wheel which can deployed to a server/cloud hosting envrinment, from the terminal simply run:
