@@ -54,7 +54,7 @@ The project has some simple unit tests defined in `tests/unit` which can be invo
 ```bash
 poetry run pytest tests/unit
 
-========================================== test session starts ==========================================
+============================= test session starts =============================
 platform darwin -- Python 3.11.0, pytest-8.3.4, pluggy-1.5.0
 rootdir: /Users/jamie/Documents/repos/internal/fast-api-example
 configfile: pyproject.toml
@@ -63,7 +63,7 @@ collected 2 items
 
 tests/unit/test_app.py ..                                                                                                                                                                                                                                                                                 [100%]
 
-========================================== 2 passed in 2.43s ==========================================
+============================= 2 passed in 2.43s =============================
 ```
 
 ## Build a Deployable Artifact
@@ -74,8 +74,7 @@ To build the API into a Python wheel which can deployed to a server/cloud hostin
 poetry build
 ```
 
-This will create a `dist` folder in the root containing a `.whl` file, and a `.tar.gz` file. The wheel can either be
-pushed to a package repository or used directly if applicable.
+This will create a `dist` folder in the root containing a `.whl` file, and a `.tar.gz` file. These files can either be deployed directly to a remote environment or published to package repository using the `poetry publish` command (though ideally the app would be containerised and deployed in this manner).
 
 ## Run the API on a Server
 
