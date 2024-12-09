@@ -52,18 +52,28 @@ If needed, hooks can be pypasses by adding the `--no-verify` flag to the commit,
 The project has some simple unit tests defined in `tests/unit` which can be invoked via `pytest`:
 
 ```bash
-poetry run pytest tests/unit
+poetry run pytest tests/unit --cov=src --cov-report=term-missing
 
-============================= test session starts =============================
+======================== test session starts ========================
 platform darwin -- Python 3.11.0, pytest-8.3.4, pluggy-1.5.0
 rootdir: /Users/jamie/Documents/repos/internal/fast-api-example
 configfile: pyproject.toml
-plugins: anyio-4.7.0
-collected 2 items                                                                                                                                                                                                                                                                                               
+plugins: cov-6.0.0, anyio-4.7.0
+collected 2 items                                                                                                                                               
 
-tests/unit/test_app.py ..                                                                                                                                                                                                                                                                                 [100%]
+tests/unit/test_app.py ..                                                                                                                                 [100%]
 
-============================= 2 passed in 2.43s =============================
+---------- coverage: platform darwin, python 3.11.0-final-0 ----------
+Name                               Stmts   Miss  Cover   Missing
+----------------------------------------------------------------
+src/fast_api_example/__init__.py       0      0   100%
+src/fast_api_example/app.py           12      0   100%
+src/fast_api_example/scripts.py        3      3     0%   1-5
+----------------------------------------------------------------
+TOTAL                                 15      3    80%
+
+
+======================== 2 passed in 1.07s ========================
 ```
 
 ## Build a Deployable Artifact
