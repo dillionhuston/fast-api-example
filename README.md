@@ -6,14 +6,18 @@
 
 ## Overview
 
-This repo contains a simple [FastAPI](https://fastapi.tiangolo.com) example along with standard Poetry setup, as well as [Mypy](https://github.com/python/mypy) static type checking,
-code formatting and linting with [Ruff](https://github.com/astral-sh/ruff) and security linting with [Bandit](https://github.com/PyCQA/bandit). All
-code quality checks are facilitated using [pre-commit](https://github.com/pre-commit/pre-commit) hooks. For SSL-related issues on Kainos machines in relation to package installation
-via Poetry, see the [SharePoint guide](https://kainossoftwareltd.sharepoint.com/sites/InformationSecurity/SitePages/Corporate-Certification-Dev-Tool-Setup.aspx#python%2C-pyenv-poetry). The repo also uses [Task](https://taskfile.dev) (see the `taskfile.yaml` in the root) - see the docs for installation instructions.
+This repo contains a simple [FastAPI](https://fastapi.tiangolo.com) example along with standard Poetry setup, as well as:
+
+* [Mypy](https://github.com/python/mypy) static type checking
+* Code formatting and linting with [Ruff](https://github.com/astral-sh/ruff)
+* Security linting with [Bandit](https://github.com/PyCQA/bandit)
+* Example unit tests with `pytest`
+
+All code quality checks are facilitated using [pre-commit](https://github.com/pre-commit/pre-commit) hooks. In addition, this project also uses  [Task](https://taskfile.dev) - see the docs for installation instructions. For SSL-related issues on Kainos machines in relation to package installation via Poetry, see the [SharePoint guide](https://kainossoftwareltd.sharepoint.com/sites/InformationSecurity/SitePages/Corporate-Certification-Dev-Tool-Setup.aspx#python%2C-pyenv-poetry).
 
 ## Local Setup
 
-After installing Python 3,11, Poetry and Task, you can run the example setup task which will configure the Poetry virtual environment and install the pre-commit hooks:
+After installing Python 3,11, Poetry and Task, you can run the example setup task which will configure the Poetry virtual environment, install the pre-commit hooks, and run them through to make sure everything is working as expected:
 
 ```bash
 task setup-local
@@ -21,7 +25,7 @@ task setup-local
 
 ## Running the API
 
-Assuming you've executed the setup task (see above), from the terminal run:
+Assuming you've executed the setup task abve, from the terminal run:
 
 ```bash
 poetry run fastapi dev src/fast_api_example/main.py
@@ -39,20 +43,17 @@ curl http://127.0.0.1:8000/items/1234?query=somequery
 
 ## Running Code Quality Checks
 
-To run the project's default code quality checks, make sure to install the configured pre-commit hooks, then run them, after which
-any commit to the repo will trigger the hooks:
+After running the setup task above, any commits will trigger the pre-commit hooks. If needed, hooks can be pypasses by adding the `--no-verify` flag to the commit, but avoid this wherever possible.
 
 ```bash
-poetry run pre-commit install
-poetry run pre-commit run --all-files
+git add blah.py
+git commit -m "My great commit"
 
 Mypy static type checking................................................Passed
 Ruff code linting........................................................Passed
 Ruff code formatting.....................................................Passed
 Bandit security linting..................................................Passed
 ```
-
-If needed, hooks can be pypasses by adding the `--no-verify` flag to the commit, but avoid this wherever possible.
 
 ## Running Tests
 
