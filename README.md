@@ -28,7 +28,7 @@ task setup-local
 Assuming you've executed the setup task abve, from the terminal run:
 
 ```bash
-poetry run fastapi dev src/fast_api_example/main.py
+poetry run fastapi dev src/fast_api_example/app.py
 ```
 
 Once the API is running, make a request:
