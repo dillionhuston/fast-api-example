@@ -1,0 +1,14 @@
+version: '3'
+
+tasks:
+  setup-local:
+    cmds:
+      - poetry check
+      - poetry install
+      - poetry run pre-commit clean
+      - poetry run pre-commit install
+      - poetry run pre-commit run --all-files
+
+  unit-tests:
+    cmds:
+      - poetry run pytest tests/unit --cov=src --cov-report=term-missing

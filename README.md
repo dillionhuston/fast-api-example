@@ -9,7 +9,15 @@
 This repo contains a simple [FastAPI](https://fastapi.tiangolo.com) example along with standard Poetry setup, as well as [Mypy](https://github.com/python/mypy) static type checking,
 code formatting and linting with [Ruff](https://github.com/astral-sh/ruff) and security linting with [Bandit](https://github.com/PyCQA/bandit). All
 code quality checks are facilitated using [pre-commit](https://github.com/pre-commit/pre-commit) hooks. For SSL-related issues on Kainos machines in relation to package installation
-via Poetry, see the [SharePoint guide](https://kainossoftwareltd.sharepoint.com/sites/InformationSecurity/SitePages/Corporate-Certification-Dev-Tool-Setup.aspx#python%2C-pyenv-poetry).
+via Poetry, see the [SharePoint guide](https://kainossoftwareltd.sharepoint.com/sites/InformationSecurity/SitePages/Corporate-Certification-Dev-Tool-Setup.aspx#python%2C-pyenv-poetry). The repo also uses [Task](https://taskfile.dev) (see the `taskfile.yaml` in the root) - see the docs for installation instructions.
+
+## Local Setup
+
+After installing Python, Poetry and Task, you can run the example setup task which will configure the Poetry virtual environment and install the pre-commit hooks:
+
+```bash
+task setup-local
+```
 
 ## Running the API
 
@@ -54,26 +62,34 @@ The project has some simple unit tests defined in `tests/unit` which can be invo
 ```bash
 poetry run pytest tests/unit --cov=src --cov-report=term-missing
 
-======================== test session starts ========================
+============================ test session starts ============================
 platform darwin -- Python 3.11.0, pytest-8.3.4, pluggy-1.5.0
 rootdir: /Users/jamie/Documents/repos/internal/fast-api-example
 configfile: pyproject.toml
 plugins: cov-6.0.0, anyio-4.7.0
 collected 2 items                                                                                                                                               
 
-tests/unit/test_app.py ..                                                                                                                                 [100%]
+tests/unit/test_app.py ..                                       [100%]
 
 ---------- coverage: platform darwin, python 3.11.0-final-0 ----------
 Name                               Stmts   Miss  Cover   Missing
 ----------------------------------------------------------------
-src/fast_api_example/__init__.py       0      0   100%
 src/fast_api_example/app.py           12      0   100%
 src/fast_api_example/scripts.py        3      3     0%   1-5
 ----------------------------------------------------------------
 TOTAL                                 15      3    80%
 
+1 empty file skipped.
 
-======================== 2 passed in 1.07s ========================
+
+============================ 2 passed in 1.07s ============================
+```
+
+As shown above, we use `pytest-cov` to generate a coerage report showing our test coverage and highlighting
+explicitly the lines in our code that are missing tests. Alternatively, you can invoke the unit tests using the example task:
+
+```bash
+task unit-tests
 ```
 
 ## Build a Deployable Artifact
