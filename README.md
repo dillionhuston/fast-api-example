@@ -13,7 +13,7 @@ via Poetry, see the [SharePoint guide](https://kainossoftwareltd.sharepoint.com/
 
 ## Local Setup
 
-After installing Python, Poetry and Task, you can run the example setup task which will configure the Poetry virtual environment and install the pre-commit hooks:
+After installing Python 3,11, Poetry and Task, you can run the example setup task which will configure the Poetry virtual environment and install the pre-commit hooks:
 
 ```bash
 task setup-local
@@ -21,10 +21,9 @@ task setup-local
 
 ## Running the API
 
-To run the project, ensure you have Python 3.11 installed (ideally via [Pyenv](https://github.com/pyenv/pyenv)), as welll as [Poetry](https://github.com/python-poetry/poetry), then, from the terminal run:
+Assuming you've executed the setup task (see above), from the terminal run:
 
 ```bash
-poetry install
 poetry run fastapi dev src/fast_api_example/main.py
 ```
 
