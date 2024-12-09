@@ -43,7 +43,7 @@ curl http://127.0.0.1:8000/items/1234?query=somequery
 
 ## Running Code Quality Checks
 
-After running the setup task above, any commits will trigger the pre-commit hooks. If needed, hooks can be pypasses by adding the `--no-verify` flag to the commit, but avoid this wherever possible.
+After running the setup task above, any commits will trigger the pre-commit hooks. If needed, hooks can be bypassed by adding the `--no-verify` flag to the commit, but avoid this wherever possible.
 
 ```bash
 git add blah.py
