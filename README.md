@@ -85,7 +85,7 @@ TOTAL                                 15      3    80%
 ============================ 2 passed in 1.07s ============================
 ```
 
-As shown above, we use `pytest-cov` to generate a coerage report showing our test coverage and highlighting
+As shown above, we use `pytest-cov` to generate a coverage report showing our test coverage and highlighting
 explicitly the lines in our code that are missing tests. Alternatively, you can invoke the unit tests using the example task:
 
 ```bash
