@@ -17,11 +17,18 @@ All code quality checks are facilitated using [pre-commit](https://github.com/pr
 
 ## Local Setup
 
-After installing Python 3,11, Poetry and Task, you can run the example setup task which will configure the Poetry virtual environment, install the pre-commit hooks, and run them through to make sure everything is working as expected:
+After installing Python 3.11, Poetry and Task, you can run the example setup task which will configure the Poetry virtual environment, install the pre-commit hooks, and run them through to make sure everything is working as expected:
 
 ```bash
 task setup-local
 ```
+
+## Default IDE Configuration
+
+The `.vscode` folder contains some default configuration for Visual Studio Code users. The `settings.json` file sets
+a visual ruler in the IDE which matches the configured Ruff maximum line length, as well as auto-format on save. The
+`extensions.json` file provides recommended extensions for use with the project - when a user opens the project in
+Visual Studio Code, they'll see these recommendations in their extensions panel.
 
 ## Running the API
 
